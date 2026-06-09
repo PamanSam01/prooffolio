@@ -1,5 +1,5 @@
-export const PACKAGE_ID = process.env.NEXT_PUBLIC_PACKAGE_ID as string;
-export const PROFILE_REGISTRY_ID = process.env.NEXT_PUBLIC_PROFILE_REGISTRY_ID as string;
+export const PACKAGE_ID = process.env.NEXT_PUBLIC_PACKAGE_ID || "";
+export const PROFILE_REGISTRY_ID = process.env.NEXT_PUBLIC_PROFILE_REGISTRY_ID || "";
 
 // Module Name
 export const REGISTRY_MODULE = `${PACKAGE_ID}::registry`;
