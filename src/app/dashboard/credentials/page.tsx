@@ -141,9 +141,12 @@ const CredentialCard = ({ cred, profileData, refetchAll }: { cred: any, profileD
 
         {/* Sync Button */}
         <button 
-          disabled={isSynced || isSyncing || !profileData}
+          disabled={isSynced || isSyncing}
           onClick={() => {
-            if (!profileData) return alert("Please create a User Passport first.");
+            if (!profileData) {
+              alert("Please create a User Passport first! Go to 'Passport Studio' to initialize your profile.");
+              return;
+            }
             setIsSyncing(true);
             const tx = new Transaction();
             tx.moveCall({
@@ -172,11 +175,13 @@ const CredentialCard = ({ cred, profileData, refetchAll }: { cred: any, profileD
           className={`w-full py-3.5 rounded-xl text-[10px] font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2 transition-all shadow-lg ${
             isSynced 
               ? "bg-[#3ECF8E]/10 text-[#3ECF8E] border border-[#3ECF8E]/30" 
-              : "bg-white text-black hover:bg-gray-200"
+              : !profileData
+                ? "bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20"
+                : "bg-white text-black hover:bg-gray-200 disabled:opacity-50"
           }`}
         >
           {isSyncing ? <Loader2 size={16} className="animate-spin" /> : isSynced ? <CheckCircle2 size={16} /> : <RefreshCw size={16} />}
-          {isSyncing ? "Syncing to Ledger..." : isSynced ? "Synced To Passport" : "Sync To Passport"}
+          {isSyncing ? "Syncing to Ledger..." : isSynced ? "Synced To Passport" : !profileData ? "Create Passport First" : "Sync To Passport"}
         </button>
       </div>
 
