@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prooffolio 🛡️
 
-## Getting Started
+**Prooffolio** is a decentralized, on-chain professional identity and reputation network built on the **Sui Blockchain**. It empowers professionals and organizations to establish verifiable credentials, discover talent, and build trust in a web3 native environment.
 
-First, run the development server:
+## 🌟 Key Features
+
+*   **Passport Studio:** Mint your verifiable professional identity on the Sui ledger. Manage your skills, links, and baseline reputation securely.
+*   **Organization Studio:** Register verified organizations to authorize the issuance of professional credentials.
+*   **Decentralized Storage:** All visual assets and proof documents are pinned to the **Walrus Network** for permanent, decentralized availability.
+*   **Talent Graph:** Discover and verify professionals across the network based on their on-chain reputation and issued credentials.
+*   **Credential Portal:** Issue, track, and verify decentralized credentials directly to user passports.
+
+## 🛠️ Technology Stack
+
+*   **Frontend:** Next.js 15, React, Tailwind CSS, Framer Motion
+*   **Web3 Integration:** `@mysten/dapp-kit`, `@mysten/sui`
+*   **Smart Contracts:** Sui Move
+*   **Decentralized Storage:** Walrus Network
+
+## 🚀 Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔗 Architecture & Smart Contracts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The core logic of Prooffolio resides in the Sui Move smart contracts located in the `/contracts` directory. To deploy or interact with the registry locally, ensure you have the `sui` CLI installed.
 
-## Learn More
+```bash
+cd contracts
+sui move build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
