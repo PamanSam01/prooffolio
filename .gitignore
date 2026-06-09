@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# Sui Move & Smart Contracts
+/contracts/build/
+.move
+*.key
+*.keystore
+sui.keystore
+.sui/
